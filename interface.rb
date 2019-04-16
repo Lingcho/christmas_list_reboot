@@ -1,21 +1,9 @@
-def list_items
-  # afficher chacun des item
-  puts "> TODO: list items"
-end
+require_relative 'methods'
 
-def add_item
-  # demander lequel
-  # l'ajouter dans notre liste d'items
-  # relister les items
-  puts "> TODO: add item"
-end
-
-def delete_item
-  # demander lequel
-  # retirer de notre liste d'items
-  # relister les items
-  puts "> TODO: delete item"
-end
+items = [
+  { name: 'Mousse à raser', bought: true },
+  { name: 'chaussetes', bought: false }
+]
 
 puts "Welcome to your Christmas gift list"
 user_action = nil
@@ -26,9 +14,10 @@ while user_action != 'quit'
   user_action = gets.chomp
 
   case user_action
-  when 'list' then list_items
-  when 'add' then add_item
-  when 'delete' then delete_item
+  when 'list' then list_items(items)
+  when 'add' then add_item(items)
+  when 'delete' then delete_item(items)
+  when 'mark' then mark_item
   when 'quit' then break
   else
     puts "Wrong Action"

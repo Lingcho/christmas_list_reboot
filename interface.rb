@@ -9,7 +9,7 @@ puts "Welcome to your Christmas gift list"
 user_action = nil
 
 while user_action != 'quit'
-  puts "> Which action [list|add|delete|quit]?"
+  puts "> Which action [list|add|mark|find|delete|quit]?"
 
   user_action = gets.chomp
 
@@ -17,7 +17,8 @@ while user_action != 'quit'
   when 'list' then list_items(items)
   when 'add' then add_item(items)
   when 'delete' then delete_item(items)
-  when 'mark' then mark_item
+  when 'mark' then mark_item(items)
+  when 'find' then find_items(items)
   when 'quit' then break
   else
     puts "Wrong Action"
